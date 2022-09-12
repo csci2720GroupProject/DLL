@@ -20,15 +20,42 @@ class DLL<E> {
                     this.next = next;
                 }
                 
-                public Node<E> getNode(Node<E> element) {
-                    return element;
-                }
+                public E getElement() {
+
+                    return this.element;
+                    
+                } //getElement
                 
-                public Node<E> setNode(Node<E> element) {
+                public void setElement(E element) {
+                
                     this.element = element;
-                    return element;
-                }
-            }
+                    
+                } //setElement
+                
+                public Node<E> getPrev() {
+                
+                    return this.prev;
+                    
+                } //getPrev
+                
+                public void setPrev(Node<E> prev) {
+                
+                    this.prev = prev;
+                    
+                } //setPrev
+                
+                public Node<E> getNext() {
+                
+                    return this.next;
+                    
+                } //getNext
+                
+                public void setNext(Node<E> next) {
+                
+                    this.next = next;
+                    
+                } //setNext
+            } //Node Class
 
             private Node<E> head;
             private Node<E> tail;
@@ -53,11 +80,11 @@ class DLL<E> {
             }
             
             public E first() {
-                return tail;
+                return head.element;
             }
             
             public E last() {
-                return head;
+                return tail.element;
             }
             
             void addFirst(E element) {
@@ -92,17 +119,17 @@ class DLL<E> {
             }
             
             public E removeFirst() {
-                Node temp = tail;
+                Node <E> temp = tail;
                 tail = tail.prev;
                 counter--;
-                return temp.element;
+                return temp.getElement();
             }
             
             public E removeLast() {
-                Node temp = head;
+                Node <E> temp = head;
                 head = head.next;
                 counter--;
-                return temp;
+                return temp.getElement();
             }
             
             public String toString() {
@@ -181,7 +208,7 @@ class DLL<E> {
             }
             
             E set(int index, E element) {
-                return "";
+                return element;
             }
             
             public static void main(String[] args) {
