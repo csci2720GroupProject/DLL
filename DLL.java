@@ -1,5 +1,7 @@
 import java.lang.*;
 
+//import javax.lang.model.element.Element;
+
     class DLL<E> {
         class Node<E> {
             private E element;
@@ -55,17 +57,18 @@ import java.lang.*;
         }
         
         public E first() {
-            
+            return tail;
         }
         
         public E last() {
-            
+            return head;
         }
         
         void addFirst(E element) {
             Node temp = new Node<>(element);
 
-            if (counter = 0) {
+            if (counter == 0) {
+                
                 head = temp;
                 tail = temp;
             } else {
@@ -80,7 +83,7 @@ import java.lang.*;
         void addLast(E element) {
             Node temp = new Node<>(element);
 
-            if (counter = 0) {
+            if (counter == 0) {
                 head = tail = temp;
                 head.prev = null;
                 tail.next = null;
@@ -94,25 +97,42 @@ import java.lang.*;
         
         public E removeFirst() {
             Node temp = tail;
-            
+            tail = tail.prev;
             counter--;
             return temp.element;
         }
         
         public E removeLast() {
-            
+            Node temp = head;
+            head = head.next;
+            counter--;
+            return temp;
         }
         
         public String toString() {
-            
+            if (head == null)
+            {
+                return "[]";
+            }
+            else {
+                String result = "[" + head.element;
+                Node current = head.next;
+                while (current != null) {
+                    result += ", " + current.element;
+                    current = current.next;
+                }
+                result += "]";
+                return result;
+            }
         }
         
         public DLL<E> clone() {
             
+            return null; 
         }
         
         public DLL<E> deepClone() {
-            
+            return null;
         }
         
         public void insert(int index, E element) {
@@ -120,11 +140,20 @@ import java.lang.*;
         }
         
         public E get(int index) {
-            
+            Node temp = head;
+            if (counter = 0) {
+                return "That element does not exist in this list.";
+            } else {
+            for (int i = 0; i < counter; i++) {
+                temp = temp.next;
+            }
+
+                return temp.element;
+            }
         }
         
         public E remove(int index) {
-            
+            return "";
         }
         
         void remove(Node<E> x) {
@@ -132,22 +161,32 @@ import java.lang.*;
         }
         
         Node<E> find(E element) {
-            
+            return head;
         }
         
         void clear() {
-            
+            head = null;
+            tail = null;
             counter = 0;
-
         }
         
         E set(int index, E element) {
-            
+            return "";
         }
         
         public static void main(String[] args) {
-            
+            DLL list = new DLL<>();
+            list.addFirst("1"); 
+            list.addFirst("2");
 
+            System.out.println(list.toString());
+
+
+            DLL list2 = new DLL<>();
+
+            list2.addLast("1");
+            list2.addLast("2");
+            System.out.println(list2.toString());
         }
 
     }
