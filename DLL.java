@@ -45,7 +45,7 @@ class DLL<E> {
             } // size
             
             public boolean isEmpty() {
-                if (counter = 0) {
+                if (counter == 0) {
                     return true;
                 } else {
                     return false;
