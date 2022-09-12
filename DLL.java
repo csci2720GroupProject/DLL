@@ -198,7 +198,27 @@ class DLL<E> {
             }
             
             Node<E> find(E element) {
-                return head;
+                
+                Node<E> temp = new Node<E>();
+                temp = this.head;
+
+                for (int i = 0; i < this.counter; i++) {
+
+                    if (temp.getElement() == element) {
+
+                        return temp;
+
+                    } //if
+
+                    if (temp.getNext() != null) {
+
+                        temp = temp.getNext();
+
+                    }
+
+                } //for
+
+                return null;
             }
             
             void clear() {
