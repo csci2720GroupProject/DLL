@@ -1,5 +1,4 @@
-    import java.lang.Object;
-    import java.lang.*;
+import java.lang.*;
 
     class DLL<E> {
         class Node<E> {
