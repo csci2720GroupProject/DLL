@@ -1,3 +1,5 @@
+import javax.management.MBeanPermission;
+
 class DLL<E> {
     class Node<E> {
             private E element;
@@ -214,7 +216,7 @@ class DLL<E> {
 
                         temp = temp.getNext();
 
-                    }
+                    } //if
 
                 } //for
 
@@ -228,8 +230,31 @@ class DLL<E> {
             }
             
             E set(int index, E element) {
+                
+                Node<E> temp = new Node<E>(element);
+
+                if (index > this.counter) {
+
+                    return null;
+
+                } //if
+
+                Node<E> moreOtherTemp = new Node<E>();
+                moreOtherTemp = this.head;
+
+                for (int i = 0; i < index - 1; i++) {
+
+                    moreOtherTemp = moreOtherTemp.getNext();
+
+                } //for
+
+                temp.setNext(moreOtherTemp.getNext());
+                moreOtherTemp.setPrev(temp);
+                temp.setPrev(moreOtherTemp);
+                moreOtherTemp.setNext(temp);
+
                 return element;
-            }
+            } //set
             
             public static void main(String[] args) {
                 DLL list = new DLL();
