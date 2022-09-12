@@ -1,5 +1,3 @@
-import javax.management.MBeanPermission;
-
 class DLL<E> {
     class Node<E> {
             private E element;
@@ -76,34 +74,37 @@ class DLL<E> {
             public boolean isEmpty() {
                 if (counter == 0) {
                     return true;
-                } else {
-                    return false;
                 }
-            }
+                
+                return false;
+
+            } //isEmpty
             
             public E first() {
-                return head.element;
-            }
+                return head.getElement();
+            } //first
             
             public E last() {
-                return tail.element;
-            }
+                return tail.getElement();
+            } //last
             
             void addFirst(E element) {
-                Node temp = new Node<>(element);
+                Node <E> temp = new Node<E>(element);
 
                 if (counter == 0) {
                     
                     head = temp;
                     tail = temp;
                 } else {
-                    tail.next = temp;
-                    temp.prev = tail;
-                    tail = temp;
-                    tail.next = null; 
+                    this.tail.setNext(temp);;
+                    temp.setPrev(tail);
+                    temp.setNext(this.head.getNext());
+                    this.head = temp;
+                    this.head.setNext(null);; 
+                    //node after head needs to point to temp
                 }
                 counter++;
-            }
+            } //addFirst
             
             void addLast(E element) {
                 Node temp = new Node<>(element);
