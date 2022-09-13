@@ -1,6 +1,6 @@
 class DLL<E> {
     class Node<E> {
-        // hello test!
+        // hello test
             private E element;
             private Node<E> prev;
             private Node<E> next;
@@ -89,11 +89,9 @@ class DLL<E> {
                 return tail.getElement();
             } //last
             
-            /**
-             * Head End
-             */
             void addFirst(E element) {
-                Node <E> temp = new Node<E>(element);
+                insert(0, element);
+                /*Node <E> temp = new Node<E>(element);
 
                 if (counter == 0) {
                     
@@ -103,17 +101,15 @@ class DLL<E> {
                     this.tail.setNext(temp);;
                     temp.setPrev(tail);
                     temp.setNext(this.head.getNext());
-                    this.head.getNext().setNext(temp);
                     this.head = temp;
-                } //if/else
-                counter++;
+                    this.head.setNext(null);; 
+                    //node after head needs to point to temp
+                }
+                counter++;*/
             } //addFirst
             
-            /**
-             * Tail End
-             */
             void addLast(E element) {
-                Node <E> temp = new Node<E>(element);
+                Node temp = new Node<>(element);
 
                 if (counter == 0) {
                     head = tail = temp;
@@ -125,21 +121,21 @@ class DLL<E> {
                     head = temp;
                 }
                 counter++;
-            } //addLast
+            }
             
             public E removeFirst() {
                 Node <E> temp = tail;
                 tail = tail.prev;
                 counter--;
                 return temp.getElement();
-            } //removeFirst
+            }
             
             public E removeLast() {
                 Node <E> temp = head;
                 head = head.next;
                 counter--;
                 return temp.getElement();
-            } //removeLast
+            }
             
             public String toString() {
                 if (head == null) {
@@ -154,31 +150,53 @@ class DLL<E> {
                     }
                     result += "]";
                     return result;
-                } //if/else
-            } //toString
+                }
+            }
             
             public DLL<E> clone() {
                 
                 return null; 
-            } //clone
+            }
             
             public DLL<E> deepClone() {
                 return null;
-            } //deepClone
+            }
             
             public void insert(int index, E element) {
-                if(index == 0){
-
-                } else if(index == counter) {
-
-                } else if(index < 0 || index > counter) {
-
-                } else {
-                    
-                }
-            } //insert
-                
-           
+                    if(index < 0 || index > 500){
+    
+                    } else if(index == 0) {
+                        Node <E> temp = new Node<E>(element);
+    
+                        if (counter == 0) {
+                            
+                            head = temp;
+                            tail = temp;
+                        } else {
+                            this.tail.setNext(temp);;
+                            temp.setPrev(tail);
+                            temp.setNext(this.head.getNext());
+                            this.head.getNext().setNext(temp);
+                            this.head = temp;
+                        } //if/else
+                        counter++;
+                    } else if(index == counter) {
+                        Node <E> temp = new Node<E>(element);
+    
+                        if (counter == 0) {
+                            head = tail = temp;
+                            head.prev = null;
+                            tail.next = null;
+                        } else {
+                            temp.next = head;
+                            temp.prev = null;
+                            head = temp;
+                        }
+                        counter++;
+                    } else {
+                       System.out.println("else"); 
+                    }
+                } //insert
             
             public E get(int index) {
                 Node<E> temp = head;
@@ -189,8 +207,8 @@ class DLL<E> {
                         temp = temp.next;
                     }
                     return temp.element;
-                } //if/else
-            } //get
+                }
+            }
             
             public E remove(int index) {
                 Node<E> removed = head;
@@ -209,12 +227,12 @@ class DLL<E> {
                     counter--;
                     System.out.println("Current counter:" + counter);
                     return removed.element;
-                } //if/else
-            } //remove
+                }
+            }
             
             void remove(Node<E> x) {
                 
-            } //remove
+            }
             
             Node<E> find(E element) {
                 
@@ -238,7 +256,7 @@ class DLL<E> {
                 } //for
 
                 return null;
-            } //find
+            }
             
             void clear() {
                 head = null;
