@@ -89,6 +89,9 @@ class DLL<E> {
                 return tail.getElement();
             } //last
             
+            /**
+            * Head end
+            */
             void addFirst(E element) {
                 Node <E> temp = new Node<E>(element);
 
@@ -107,6 +110,9 @@ class DLL<E> {
                 counter++;
             } //addFirst
             
+            /*
+            * Tail end 
+            */
             void addLast(E element) {
                 Node temp = new Node<>(element);
 
