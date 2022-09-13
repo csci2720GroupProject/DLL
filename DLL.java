@@ -90,8 +90,8 @@ class DLL<E> {
             } //last
             
             /**
-            * Head end
-            */
+             * Head End
+             */
             void addFirst(E element) {
                 Node <E> temp = new Node<E>(element);
 
@@ -103,18 +103,17 @@ class DLL<E> {
                     this.tail.setNext(temp);;
                     temp.setPrev(tail);
                     temp.setNext(this.head.getNext());
+                    this.head.getNext().setNext(temp);
                     this.head = temp;
-                    this.head.setNext(null);; 
-                    //node after head needs to point to temp
-                }
+                } //if/else
                 counter++;
             } //addFirst
             
-            /*
-            * Tail end 
-            */
+            /**
+             * Tail End
+             */
             void addLast(E element) {
-                Node temp = new Node<>(element);
+                Node <E> temp = new Node<E>(element);
 
                 if (counter == 0) {
                     head = tail = temp;
@@ -126,14 +125,14 @@ class DLL<E> {
                     head = temp;
                 }
                 counter++;
-            }
+            } //addLast
             
             public E removeFirst() {
                 Node <E> temp = tail;
                 tail = tail.prev;
                 counter--;
                 return temp.getElement();
-            }
+            } //removeFirst
             
             public E removeLast() {
                 Node <E> temp = head;
