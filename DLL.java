@@ -109,7 +109,8 @@ class DLL<E> {
             } //addFirst
             
             void addLast(E element) {
-                Node temp = new Node<>(element);
+                insert(counter, element);
+                /*Node temp = new Node<>(element);
 
                 if (counter == 0) {
                     head = tail = temp;
@@ -120,21 +121,23 @@ class DLL<E> {
                     temp.prev = null;
                     head = temp;
                 }
-                counter++;
+                counter++;*/
             }
             
             public E removeFirst() {
-                Node <E> temp = tail;
-                tail = tail.prev;
+                Node <E> removed = head;
+                head = head.next;
+                head.prev = null;
                 counter--;
-                return temp.getElement();
+                return removed.getElement();
             }
             
             public E removeLast() {
-                Node <E> temp = head;
-                head = head.next;
+                Node <E> removed = tail;
+                tail = tail.prev;
+                tail.next = null;
                 counter--;
-                return temp.getElement();
+                return removed.getElement();
             }
             
             public String toString() {
@@ -165,7 +168,7 @@ class DLL<E> {
             public void insert(int index, E element) {
                     if(index < 0 || index > 500){
     
-                    } else if(index == 0) {
+                    } else if(index == counter) {
                         Node <E> temp = new Node<E>(element);
     
                         if (counter == 0) {
@@ -175,12 +178,12 @@ class DLL<E> {
                         } else {
                             this.tail.setNext(temp);;
                             temp.setPrev(tail);
-                            temp.setNext(this.head.getNext());
-                            this.head.getNext().setNext(temp);
-                            this.head = temp;
+                            //temp.setNext(this.head.getNext());
+                            //this.head.getNext().setNext(temp);
+                            this.tail = temp;
                         } //if/else
                         counter++;
-                    } else if(index == counter) {
+                    } else if(index == 0) {
                         Node <E> temp = new Node<E>(element);
     
                         if (counter == 0) {
@@ -214,20 +217,28 @@ class DLL<E> {
                 Node<E> removed = head;
                 Node<E> temp = head;
                 System.out.println("Current counter:" + counter);
+
                 if (counter == 0) {
                     return null;
+                } else if(index == 0) {
+                    head = head.next;
+                    head.prev = null;
+                } else if(index == counter){
+                    removed = tail;
+                    tail = null;
                 } else {
-                    for (int i = 1; i < index; i++) {
+                    for (int i = 0; i <= index; i++) {
                         temp = temp.next;
                         removed = removed.next;
                     }
                     temp.prev = removed.prev;
                     temp.next = removed.next;
 
-                    counter--;
-                    System.out.println("Current counter:" + counter);
-                    return removed.element;
+                    
                 }
+                counter--;
+                System.out.println("Current counter:" + counter);
+                return removed.element;
             }
             
             void remove(Node<E> x) {
@@ -293,7 +304,12 @@ class DLL<E> {
             
             public static void main(String[] args) {
                 DLL list = new DLL();
-                list.addFirst("1"); 
+                list.addLast("1"); 
+                list.addFirst("2");
+   
+
+                System.out.println(list.toString());
+
                 list.addFirst("2");
 
                 System.out.println(list.toString());
@@ -305,8 +321,10 @@ class DLL<E> {
                 list2.addLast("2");
                 System.out.println(list2.toString());
 
-
-                list.remove(2);
+                System.out.println();
+                System.out.println();
+                System.out.println(list.toString());
+                list.removeLast();
                 //list.get(1).toString();
                 System.out.println(list.toString());
                 
