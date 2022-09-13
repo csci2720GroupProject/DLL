@@ -167,7 +167,15 @@ class DLL<E> {
             }
             
             public void insert(int index, E element) {
-                
+                if(index == 0){
+
+                } else if(index == counter) {
+
+                } else if(index < 0 || index > counter) {
+
+                } else {
+                    
+                }
             }
             
             public E get(int index) {
