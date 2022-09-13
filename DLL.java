@@ -139,7 +139,7 @@ class DLL<E> {
                 head = head.next;
                 counter--;
                 return temp.getElement();
-            }
+            } //removeLast
             
             public String toString() {
                 if (head == null) {
@@ -154,21 +154,21 @@ class DLL<E> {
                     }
                     result += "]";
                     return result;
-                }
-            }
+                } //if/else
+            } //toString
             
             public DLL<E> clone() {
                 
                 return null; 
-            }
+            } //clone
             
             public DLL<E> deepClone() {
                 return null;
-            }
+            } //deepClone
             
             public void insert(int index, E element) {
                 
-            }
+            } //insert
             
             public E get(int index) {
                 Node<E> temp = head;
@@ -179,8 +179,8 @@ class DLL<E> {
                         temp = temp.next;
                     }
                     return temp.element;
-                }
-            }
+                } //if/else
+            } //get
             
             public E remove(int index) {
                 Node<E> removed = head;
@@ -199,12 +199,12 @@ class DLL<E> {
                     counter--;
                     System.out.println("Current counter:" + counter);
                     return removed.element;
-                }
-            }
+                } //if/else
+            } //remove
             
             void remove(Node<E> x) {
                 
-            }
+            } //remove
             
             Node<E> find(E element) {
                 
@@ -228,7 +228,7 @@ class DLL<E> {
                 } //for
 
                 return null;
-            }
+            } //find
             
             void clear() {
                 head = null;
