@@ -157,7 +157,9 @@ class DLL<E> {
             }
             
             public DLL<E> clone() {
-                Node<E> clone = head;
+                 DLL<E> clone = new DLL();
+                clone.head = this.head;
+                
                 return clone; 
             }
             
