@@ -169,7 +169,7 @@ class DLL<E> {
             
             public void insert(int index, E element) {
                     if(index < 0 || index > 500){
-    
+                        System.out.println("else");
                     } else if(index == counter) {
                         Node <E> temp = new Node<E>(element);
     
@@ -193,15 +193,29 @@ class DLL<E> {
                             head.prev = null;
                             tail.next = null;
                         } else {
+                            head.prev = temp;
                             temp.next = head;
                             temp.prev = null;
                             head = temp;
                         }
                         counter++;
                     } else {
-                       System.out.println("else"); 
+                        Node <E> temp = new Node<E>(element);
+                        Node <E> tempHead = head;
+                        for(int i = 0; i < index-1; i++) {
+                            tempHead = tempHead.next;
+                        }
+                        temp.next = tempHead.next;
+                        temp.prev = tempHead;
+                        tempHead.next = temp;
+                       
+
                     }
                 } //insert
+
+                // 3 2 1 5
+                // temp = 0
+                // 2 1 5
             
             public E get(int index) {
                 Node<E> temp = head;
@@ -308,27 +322,17 @@ class DLL<E> {
                 DLL list = new DLL();
                 list.addLast("1"); 
                 list.addFirst("2");
-   
+                list.addFirst("3");
+                list.addLast("0");
+                list.insert(2, 5);
 
-                System.out.println(list.toString());
-
-                list.addFirst("2");
-
-                System.out.println(list.toString());
-
-
-                DLL list2 = new DLL<>();
-
-                list2.addLast("1");
-                list2.addLast("2");
-                System.out.println(list2.toString());
 
                 System.out.println();
                 System.out.println();
                 System.out.println(list.toString());
-                list.removeLast();
-                //list.get(1).toString();
-                System.out.println(list.toString());
+                // list.removeLast();
+                // //list.get(1).toString();
+                // System.out.println(list.toString());
                 
             }
 
