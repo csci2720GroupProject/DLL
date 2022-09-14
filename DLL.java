@@ -157,7 +157,7 @@ class DLL<E> {
             }
             
             public DLL<E> clone() {
-                 DLL<E> clone = new DLL();
+                DLL<E> clone = new DLL();
                 clone.head = this.head;
                 
                 return clone; 
