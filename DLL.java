@@ -157,8 +157,8 @@ class DLL<E> {
             }
             
             public DLL<E> clone() {
-                
-                return null; 
+                Node<E> clone = head;
+                return clone; 
             }
             
             public DLL<E> deepClone() {
