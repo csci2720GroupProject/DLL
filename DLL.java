@@ -232,8 +232,6 @@ class DLL<E> {
             public E remove(int index) {
                 Node<E> removed = head;
                 Node<E> temp = head;
-                System.out.println("Current counter:" + counter);
-
                 if (counter == 0) {
                     return null;
                 } else if(index == 0) {
@@ -254,7 +252,6 @@ class DLL<E> {
                     
                 }
                 counter--;
-                System.out.println("Current counter:" + counter);
                 return removed.element;
             }
             
@@ -322,12 +319,10 @@ class DLL<E> {
                     moreOtherTemp = moreOtherTemp.getNext();
 
                 } //for
-
                 temp.setNext(moreOtherTemp.getNext());
                 moreOtherTemp.setPrev(temp);
                 temp.setPrev(moreOtherTemp);
                 moreOtherTemp.setNext(temp);
-
                 return element;
             } //set
             
@@ -341,16 +336,6 @@ class DLL<E> {
                 list.insert(1, 5);
                 System.out.println(list.toString());
                 list.remove(4);
-                System.out.println(list.toString());
-
-
-                // System.out.println();
-                // System.out.println();
-                // System.out.println(list.toString());
-                // list.removeLast();
-                // //list.get(1).toString();
-                // System.out.println(list.toString());
-                
+                System.out.println(list.toString());   
             }
-
         }
