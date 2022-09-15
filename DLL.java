@@ -91,37 +91,10 @@ class DLL<E> {
             
             void addFirst(E element) {
                 insert(0, element);
-                /*Node <E> temp = new Node<E>(element);
-
-                if (counter == 0) {
-                    
-                    head = temp;
-                    tail = temp;
-                } else {
-                    this.tail.setNext(temp);;
-                    temp.setPrev(tail);
-                    temp.setNext(this.head.getNext());
-                    this.head = temp;
-                    this.head.setNext(null);; 
-                    //node after head needs to point to temp
-                }
-                counter++;*/
             } //addFirst
             
             void addLast(E element) {
                 insert(counter, element);
-                /*Node temp = new Node<>(element);
-
-                if (counter == 0) {
-                    head = tail = temp;
-                    head.prev = null;
-                    tail.next = null;
-                } else {
-                    temp.next = head;
-                    temp.prev = null;
-                    head = temp;
-                }
-                counter++;*/
             }
             
             public E removeFirst() {
