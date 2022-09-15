@@ -144,7 +144,7 @@ class DLL<E> {
             
             public String toString() {
                 if (head == null) {
-                    return "[]";
+                    return null;
                 }
                 else {
                     String result = "[" + head.element;
@@ -345,5 +345,8 @@ class DLL<E> {
                 System.out.println(list.toString());
                 list.remove(4);
                 System.out.println(list.toString());   
+                list.clear();
+                System.out.println(list.toString());   
+
             }
         }
