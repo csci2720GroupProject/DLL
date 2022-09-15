@@ -1,62 +1,62 @@
 class DLL<E> {
     class Node<E> {
         // hello test
-            private E element;
-            private Node<E> prev;
-            private Node<E> next;
+        private E element;
+        private Node<E> prev;
+        private Node<E> next;
                 
-            public Node() {
-                element = null;
-                prev = null;
-                next = null;
-            } // Node
+        public Node() {
+            element = null;
+            prev = null;
+            next = null;
+        } // Node
                 
-                public Node (E element) {
-                    this.element = element;
-                } // Node
+        public Node (E element) {
+            this.element = element;
+        } // Node
                 
-                public Node (E element, Node<E> prev, Node<E> next) {
-                    this.element = element;
-                    this.prev = prev;
-                    this.next = next;
-                } // Node
+        public Node (E element, Node<E> prev, Node<E> next) {
+            this.element = element;
+            this.prev = prev;
+            this.next = next;
+        } // Node
                 
-                public E getElement() {
+        public E getElement() {
 
-                    return this.element;
+            return this.element;
                     
-                } //getElement
+        } //getElement
                 
-                public void setElement(E element) {
+        public void setElement(E element) {
                 
-                    this.element = element;
+            this.element = element;
                     
-                } //setElement
+        } //setElement
                 
-                public Node<E> getPrev() {
+        public Node<E> getPrev() {
                 
-                    return this.prev;
+            return this.prev;
                     
-                } //getPrev
+        } //getPrev
                 
-                public void setPrev(Node<E> prev) {
-                
-                    this.prev = prev;
+        public void setPrev(Node<E> prev) {
+               
+            this.prev = prev;
                     
-                } //setPrev
+        } //setPrev
                 
-                public Node<E> getNext() {
+        public Node<E> getNext() {
                 
-                    return this.next;
+            return this.next;
                     
-                } //getNext
+        } //getNext
                 
-                public void setNext(Node<E> next) {
+        public void setNext(Node<E> next) {
                 
-                    this.next = next;
+            this.next = next;
                     
-                } //setNext
-            } //Node Class
+        } //setNext
+    } //Node Class
 
             private Node<E> head;
             private Node<E> tail;
