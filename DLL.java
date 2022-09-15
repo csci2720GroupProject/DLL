@@ -191,8 +191,6 @@ class DLL<E> {
                         } else {
                             this.tail.setNext(temp);;
                             temp.setPrev(tail);
-                            //temp.setNext(this.head.getNext());
-                            //this.head.getNext().setNext(temp);
                             this.tail = temp;
                         } //if/else
                         counter++;
