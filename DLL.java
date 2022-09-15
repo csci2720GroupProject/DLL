@@ -165,6 +165,7 @@ class DLL<E> {
                 return clone; 
             }
             
+            /** NOT DONE */
             public DLL<E> deepClone() {
                 return null;
             }
@@ -259,7 +260,7 @@ class DLL<E> {
             
             /** STILL WORKING ON THIS  */
             void remove(Node<E> x) {
-                 Node<E> temp = x;
+                Node<E> temp = x;
                 if ((x.getElement() != head) && (x.getElement() != tail)) {
                     temp = temp.prev;
                     temp.next = temp.next.next;
