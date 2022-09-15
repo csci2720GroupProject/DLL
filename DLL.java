@@ -257,8 +257,20 @@ class DLL<E> {
                 return removed.element;
             }
             
+            /** STILL WORKING ON THIS  */
             void remove(Node<E> x) {
-                
+                 Node<E> temp = x;
+                if ((x.getElement() != head) && (x.getElement() != tail)) {
+                    temp = temp.prev;
+                    temp.next = temp.next.next;
+                } else if (x.equals(tail)) {
+                    temp = temp.prev;
+                    temp.next = null;
+                } else {
+                    temp = temp.next;
+                    temp.prev = null;
+                }
+                return;
             }
             
             Node<E> find(E element) {
