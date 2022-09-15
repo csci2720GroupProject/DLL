@@ -165,9 +165,17 @@ class DLL<E> {
                 return clone; 
             }
             
-            /** NOT DONE */
             public DLL<E> deepClone() {
-                return null;
+               DLL<E> clone = new DLL<>();
+                Node<E> temp = this.head;
+
+                int i = 0;
+                while (temp != null) {
+                    clone.insert(i, temp.getElement());
+                    temp = temp.next;
+                    i++;
+                }
+                return clone;
             }
             
             public void insert(int index, E element) {
