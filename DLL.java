@@ -265,12 +265,11 @@ class DLL<E> {
             }
             
             void remove(Node<E> x) {
-                Node<E> temp = x;
                 Node<E> temp2 = head;
                 
                 int index = 0;
 
-                while (temp2 != temp) {
+                while (temp2 != x) {
                     temp2 = temp2.next;
                     index++;
                 }
