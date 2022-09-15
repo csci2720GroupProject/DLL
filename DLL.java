@@ -9,17 +9,17 @@ class DLL<E> {
                 element = null;
                 prev = null;
                 next = null;
-            }
+            } // Node
                 
                 public Node (E element) {
                     this.element = element;
-                }
+                } // Node
                 
                 public Node (E element, Node<E> prev, Node<E> next) {
                     this.element = element;
                     this.prev = prev;
                     this.next = next;
-                }
+                } // Node
                 
                 public E getElement() {
 
@@ -95,7 +95,7 @@ class DLL<E> {
             
             void addLast(E element) {
                 insert(counter, element);
-            }
+            } // addLast
             
             public E removeFirst() {
                 return remove(0);
@@ -104,7 +104,7 @@ class DLL<E> {
                 head.prev = null;
                 counter--;
                 return removed.getElement();*/
-            }
+            } // removeFirst
             
             public E removeLast() {
                 return remove(counter-1);
@@ -113,7 +113,7 @@ class DLL<E> {
                 // tail.next = null;
                 // counter--;
                 // return removed.getElement();
-            } 
+            } // removeLast
             
             public String toString() {
                 if (head == null) {
@@ -129,14 +129,14 @@ class DLL<E> {
                     result += "]";
                     return result;
                 }
-            }
+            } // toString
             
             public DLL<E> clone() {
                 DLL<E> clone = new DLL();
                 clone.head = this.head;
                 
                 return clone; 
-            }
+            } // clone
             
             public DLL<E> deepClone() {
                DLL<E> clone = new DLL<>();
@@ -149,7 +149,7 @@ class DLL<E> {
                     i++;
                 }
                 return clone;
-            }
+            } // deepClone
             
             public void insert(int index, E element) {
                     if(index < 0 || index > 500){
@@ -174,27 +174,27 @@ class DLL<E> {
                             head = tail = temp;
                             head.prev = null;
                             tail.next = null;
-                        } else {
-                            head.prev = temp;
-                            temp.next = head;
-                            temp.prev = null;
-                            head = temp;
-                        }
-                        counter++;
                     } else {
-                        Node <E> temp = new Node<E>(element);
-                        Node <E> tempHead = head;
-                        for(int i = 0; i < index-1; i++) {
-                            tempHead = tempHead.next;
-                        }
-                        temp.next = tempHead.next;
-                        temp.prev = tempHead;
-                        tempHead.next = temp;
-                        counter++;
-
+                        head.prev = temp;
+                        temp.next = head;
+                        temp.prev = null;
+                        head = temp;
                     }
-                    return;
-                } //insert
+                    counter++;
+                } else {
+                    Node <E> temp = new Node<E>(element);
+                    Node <E> tempHead = head;
+                    for(int i = 0; i < index-1; i++) {
+                        tempHead = tempHead.next;
+                    }
+                    temp.next = tempHead.next;
+                    temp.prev = tempHead;
+                    tempHead.next = temp;
+                    counter++;
+
+                }
+                return;
+            } //insert
 
             
             public E get(int index) {
@@ -233,7 +233,7 @@ class DLL<E> {
                 }
                 counter--;
                 return removed.element;
-            }
+            } // remove
             
             void remove(Node<E> x) {
                 Node<E> temp2 = head;
@@ -247,7 +247,7 @@ class DLL<E> {
 
                 remove(index);
                 return;
-            }
+            } // remove
             
             Node<E> find(E element) {
                 
@@ -271,13 +271,13 @@ class DLL<E> {
                 } //for
 
                 return null;
-            }
+            } // find
             
             void clear() {
                 head = null;
                 tail = null;
                 counter = 0;
-            }
+            } // clear
             
             E set(int index, E element) {
                 
@@ -318,5 +318,5 @@ class DLL<E> {
                 list.clear();
                 System.out.println(list.toString());   
 
-            }
+            } // main
         }
