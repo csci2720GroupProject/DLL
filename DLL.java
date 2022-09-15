@@ -222,6 +222,7 @@ class DLL<E> {
                         counter++;
 
                     }
+                    return;
                 } //insert
 
             
