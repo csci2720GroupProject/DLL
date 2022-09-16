@@ -19,7 +19,7 @@
 
 ---
 
-In the main method of **DLL.java** we implemented tests with the methods in our Doubly Linked List. To add additional tests or to replace our tests, simply edit the main method. Below are a list of all of our tests:
+In the main method of **DLL.java** we implemented tests with the methods in our Doubly Linked List. To add additional tests or to replace our tests, simply edit the main method. Below are a list of all of our tests included in DLL.java:
 
     DLL list = new DLL();
     list.addLast("1"); 
