@@ -19,7 +19,7 @@
 
 ---
 
-In the main method of **DLL.java** we implemented tests with the methods in our Doubly Linked List. To add additional tests or to replace our tests, simply edit the main method. Below are a list of all of our tests included in DLL.java:
+In the main method of **DLL.java** we implemented tests with the methods in our Doubly Linked List. To add additional tests or to replace our tests, simply edit the main method. Below are a list of some of our tests included in DLL.java:
 
     DLL list = new DLL();
     list.addLast("1"); 
@@ -45,7 +45,8 @@ Constructs an empty Doubly Linked List
 Returns the current size of the list
 
     public boolean isEmpty()
-Returns true if the list is empty, false if it's not    
+Returns true if the list is empty, false if it's not  
+
     public E first()
     public E last()
     public void addFirst()
