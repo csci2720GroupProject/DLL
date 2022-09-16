@@ -89,11 +89,11 @@ class DLL<E> {
                 return tail.getElement();
             } //last
             
-            void addFirst(E element) {
+            public void addFirst(E element) {
                 insert(0, element);
             } //addFirst
             
-            void addLast(E element) {
+            public void addLast(E element) {
                 insert(counter, element);
             } // addLast
             

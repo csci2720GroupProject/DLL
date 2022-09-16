@@ -33,3 +33,15 @@ In the main method of **DLL.java** we implemented tests with the methods in our 
     System.out.println(list.toString());   
     list.clear();
     System.out.println(list.toString());   
+
+## Methods included in DLL.java
+
+---
+
+    public DLL()
+Constructs an empty Doubly Linked List
+    public int size()
+    public boolean isEmpty()
+    public E first()
+    public E last()
+    public void addFirst()
