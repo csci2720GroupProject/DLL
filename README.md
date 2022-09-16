@@ -45,11 +45,7 @@ Constructs an empty Doubly Linked List
 Returns the current size of the list
 
     public boolean isEmpty()
-<<<<<<< HEAD
 Returns true or false, depending on whether or not the list is empty
-=======
-Returns true if the list is empty, false if it's not  
->>>>>>> 028e0af85b45f60d6f1eea12a31e2d674ae16e10
 
     public E first()
 Returns the element in the first node
