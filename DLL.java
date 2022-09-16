@@ -235,7 +235,7 @@ class DLL<E> {
                 return removed.element;
             } // remove
             
-            void remove(Node<E> x) {
+            public void remove(Node<E> x) {
                 Node<E> temp = head;
                 
                 int index = 0;
@@ -249,7 +249,7 @@ class DLL<E> {
                 return;
             } // remove
             
-            Node<E> find(E element) {
+            public Node<E> find(E element) {
                 
                 Node<E> temp = new Node<E>();
                 temp = this.head;
@@ -273,13 +273,13 @@ class DLL<E> {
                 return null;
             } // find
             
-            void clear() {
+            public void clear() {
                 head = null;
                 tail = null;
                 counter = 0;
             } // clear
             
-            E set(int index, E element) {
+            public E set(int index, E element) {
                 
                 Node<E> temp = new Node<E>(element);
 
