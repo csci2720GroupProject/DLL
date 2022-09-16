@@ -40,8 +40,10 @@ In the main method of **DLL.java** we implemented tests with the methods in our 
 
     public DLL()
 Constructs an empty Doubly Linked List
+
     public int size()
 Returns the current size of the list
+
     public boolean isEmpty()
     public E first()
     public E last()
