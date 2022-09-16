@@ -45,6 +45,7 @@ Constructs an empty Doubly Linked List
 Returns the current size of the list
 
     public boolean isEmpty()
+Returns true if the list is empty, false if it's not    
     public E first()
     public E last()
     public void addFirst()
