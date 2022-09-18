@@ -132,7 +132,8 @@ class DLL<E> {
             } // toString
             
             public DLL<E> clone() {
-                DLL<E> clone = new DLL();
+                DLL<E> clone = new DLL<>();
+                clone.counter = this.counter;
                 clone.head = this.head;
                 
                 return clone; 
@@ -280,8 +281,8 @@ class DLL<E> {
             } // clear
             
             public E set(int index, E element) {
-                
-                Node<E> temp = new Node<E>(element);
+                E old;
+                Node<E> temp = head;
 
                 if (index > this.counter) {
 
@@ -289,19 +290,13 @@ class DLL<E> {
 
                 } //if
 
-                Node<E> moreOtherTemp = new Node<E>();
-                moreOtherTemp = this.head;
-
-                for (int i = 0; i < index - 1; i++) {
-
-                    moreOtherTemp = moreOtherTemp.getNext();
-
-                } //for
-                temp.setNext(moreOtherTemp.getNext());
-                moreOtherTemp.setPrev(temp);
-                temp.setPrev(moreOtherTemp);
-                moreOtherTemp.setNext(temp);
-                return element;
+                for(int i = 0; i < index; i++) {
+                    temp = temp.getNext();
+                }
+                old = temp.element;
+                temp.element = element;
+               
+                return old;
             } //set
             
             public static void main(String[] args) {
